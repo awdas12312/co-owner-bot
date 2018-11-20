@@ -156,38 +156,4 @@ reaction2.on("collect", r => {
     }
   });
   
-  Rocket.on('message', message => {//mute
-    if (message.content.startsWith('#mute')) {
-  if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
-  let men = message.mentions.users.first()
-  let mas = message.author
-  if(!men) return message.channel.send('`منشن الشخص الذي تريد ان تعطيه ميوت كتابي` ');
-  message.guild.channels.forEach(c => {
-  c.overwritePermissions(men.id, {
-            SEND_MESSAGES: false
-  })
-      })
-  const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription(`**
-   <@${men.id}>
-  لقد تم اعطائك ميوت كتابي
-  بواسطة : <@${message.author.id}> **`)
-  .setThumbnail("https://cdn.discordapp.com/attachments/408952032112803850/452090205793681419/fd684707fc14f41663f15ecebf089f06.png")
-
-  Rocket.users.get(men.id).sendEmbed(embed)
-  const Embed11 = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setAuthor(message.guild.name, message.guild.iconURL)
-  .setDescription(`          <@${men.id}>
-  لقد تم اعطائه الميوت الكتابي بنجاح
-  بواسطة : <@${message.author.id}> `)
-  .setThumbnail("https://cdn.discordapp.com/attachments/408952032112803850/452090205793681419/fd684707fc14f41663f15ecebf089f06.png")
-  message.channel.sendEmbed(Embed11).then(message => {message.delete(20000)})
-      }
-
-
-});
-
-
-});
+  
