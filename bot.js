@@ -96,7 +96,7 @@ Rocket.on("message", function(message) {
    }
 });
 
-Rocket.on('message', message => { //clear
+Rocket.on('message', message => {
     if(!message.channel.guild) return;
  if(message.content.startsWith(prefix # 'clear')) {
  if(!message.channel.guild) return message.channel.send('**هذا الامر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -136,24 +136,3 @@ reaction2.on("collect", r => {
  }
  });
  
- Rocket.on('message', message => {//av mension
-    if (message.content.startsWith("#afatar")) {
-
-        var mentionned = message.mentions.users.first();
-    var king66s;
-      if(mentionned){
-          var king66s = mentionned;
-      } else {
-          var king66s = message.author;
-
-      }
-        const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-          .setAuthor(message.author.username, message.author.avatarURL)
-        .setImage(`${king66s.avatarURL}`)
-      message.channel.sendEmbed(embed);
-
-    }
-  });
-  
-  
