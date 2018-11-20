@@ -28,7 +28,7 @@ client.user.setGame(Five Stars,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.login(process.env.BOT_TOKEN);
+
 
 Rocket.on('message', message => { //ping
     if(!message.channel.guild) return;
@@ -49,3 +49,4 @@ message.channel.send({embed:embed});
 
 });
 
+client.login(process.env.BOT_TOKEN);
